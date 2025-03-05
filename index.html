@@ -26,6 +26,7 @@
       border-collapse: collapse;
       margin-top: 20px;
       background: #fff;
+	  --bg-town: #AED1E5;
     }
     th, td {
       border: 1px solid #ddd;
@@ -92,60 +93,155 @@
   </div>
 
   <!-- Reiseroute & Unterkunftsvorschläge -->
-  <div class="module">
-    <h2>Reiseroute & Aufenthaltsdauer / Unterkunftsvorschläge</h2>
-    <table>
+<div class="module">
+  <h2>Reiseroute, Datum, tatsächliche Aufenthaltsdauer & Unterkunftsvorschläge</h2>
+  <label>
+    <input type="checkbox" id="toggleRoutes"> Reisewege anzeigen
+  </label>
+  <table>
+    <thead>
       <tr>
-        <th>Datum</th>
         <th>Ort</th>
+        <th>Datum</th>
         <th>Hauptaktivitäten</th>
-        <th>Aufenthaltsdauer</th>
+        <th>Aufenthaltsdauer (Nächte)</th>
+        <th>Tatsächliche Aufenthaltsdauer (Tage)</th>
         <th>Unterkunftsvorschläge</th>
       </tr>
-      <tr>
-        <td>04.04.</td>
-        <td>Colombo – Transfer</td>
-        <td>Ankunft um 11:20, direkter Transfer zur ersten Location</td>
-        <td>keine Übernachtung</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>04.04. – 09.04.</td>
-        <td>Kalpitiya</td>
+    </thead>
+    <tbody>
+      <!-- Location 1: Kalpitiya -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Kalpitiya</strong></td>
+        <td>04.04.2025 – 12.04.2025</td>
         <td>Windsurfen, Kitesurfen, Delfinbeobachtung</td>
-        <td>5 Nächte</td>
+        <td>8</td>
+        <td>7.5</td>
         <td>Eco-Lodge Kalpitiya, Beachside Guesthouse</td>
       </tr>
-      <tr>
-        <td>09.04. – 11.04.</td>
-        <td>Sigiriya/Dambulla</td>
+      <!-- Route: Kalpitiya -> Sigiriya/Dambulla -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Kalpitiya nach Sigiriya/Dambulla: Abfahrt 12.04, 12:00 – Ankunft 12.04, 18:00, Dauer 6h, Reisekosten ca. 5 €
+        </td>
+      </tr>
+      <!-- Location 2: Sigiriya/Dambulla -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Sigiriya/Dambulla</strong></td>
+        <td>12.04.2025 – 14.04.2025</td>
         <td>Felsenfestung Sigiriya, Höhlentempel, Safari</td>
-        <td>2 Nächte</td>
+        <td>2</td>
+        <td>1.8</td>
         <td>Heritage Guesthouse Sigiriya, Dambulla Villa</td>
       </tr>
-      <tr>
-        <td>11.04. – 14.04.</td>
-        <td>Ella/Nuwara Eliya</td>
+      <!-- Route: Sigiriya/Dambulla -> Kitulgala -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Sigiriya/Dambulla nach Kitulgala: Abfahrt 14.04, 14:00 – Ankunft 14.04, 17:00, Dauer 3h, Reisekosten ca. 5 €
+        </td>
+      </tr>
+      <!-- Location 3: Kitulgala -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Kitulgala</strong></td>
+        <td>14.04.2025 – 17.04.2025</td>
+        <td>Wildwasser-Rafting, Canyoning, Dschungelwanderung</td>
+        <td>3</td>
+        <td>3.0</td>
+        <td>Palmstone Retreat, Kitulgala Heritage Resort</td>
+      </tr>
+      <!-- Route: Kitulgala -> Ella -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Kitulgala nach Ella: Abfahrt 17.04, 17:30 – Ankunft 17.04, 23:30, Dauer 6h, Reisekosten ca. 10 €
+        </td>
+      </tr>
+      <!-- Location 4: Ella -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Ella</strong></td>
+        <td>17.04.2025 – 20.04.2025</td>
         <td>Wanderungen, Teeplantagen, Wasserfälle</td>
-        <td>3 Nächte</td>
+        <td>3</td>
+        <td>2.63</td>
         <td>Tea Garden Cottage, Ella Mountain Retreat</td>
       </tr>
-      <tr>
-        <td>14.04. – 04.05.</td>
-        <td>Mawella Beach</td>
-        <td>Strand, Schnorcheln, lokale Fischerdörfer – pure Entspannung</td>
-        <td>20 Nächte</td>
-        <td>Beach Bungalow Mawella, Seaside Eco Lodge</td>
+      <!-- Route: Ella -> Haputale -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Ella nach Haputale: Abfahrt 20.04, 10:00 – Ankunft 20.04, 11:00, Dauer 1h, Reisekosten ca. 5 €
+        </td>
       </tr>
-      <tr>
-        <td>04.05. – 06.05.</td>
-        <td>Colombo</td>
+      <!-- Location 5: Haputale -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Haputale</strong></td>
+        <td>20.04.2025 – 21.04.2025</td>
+        <td>Authentisches Bergdorf, Aussichten & Natur</td>
+        <td>1</td>
+        <td>1.04</td>
+        <td>Lokale Guesthouses in Haputale</td>
+      </tr>
+      <!-- Route: Haputale -> Udawalawe -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Haputale zum Udawalawe Nationalpark: Abfahrt 21.04, 12:00 – Ankunft 21.04, 16:00, Dauer 4h, Reisekosten ca. 10 €
+        </td>
+      </tr>
+      <!-- Location 6: Udawalawe Nationalpark -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Udawalawe Nationalpark</strong></td>
+        <td>21.04.2025 – 24.04.2025</td>
+        <td>Safari, Tierbeobachtungen</td>
+        <td>3</td>
+        <td>2.63</td>
+        <td>Udawalawe Safari Lodge, National Park Guesthouse</td>
+      </tr>
+      <!-- Route: Udawalawe -> Hiriketya -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Udawalawe nach Hiriketya: Abfahrt 24.04, 09:00 – Ankunft 24.04, 12:00, Dauer 3h, Reisekosten ca. 5 €
+        </td>
+      </tr>
+      <!-- Location 7: Hiriketya -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Hiriketya</strong></td>
+        <td>24.04.2025 – 04.05.2025</td>
+        <td>Surfen, Entspannen, Strandleben</td>
+        <td>10</td>
+        <td>9.92</td>
+        <td>Surf & Chill Hiriketya, Beachside Surf Inn</td>
+      </tr>
+      <!-- Route: Hiriketya -> Colombo -->
+      <tr class="routeRow">
+        <td colspan="6" style="background-color: transparent; padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+          Von Hiriketya nach Colombo: Abfahrt 04.05, 10:00 – Ankunft 04.05, 15:00, Dauer 5h, Reisekosten ca. 10 €
+        </td>
+      </tr>
+      <!-- Location 8: Colombo -->
+      <tr style="background-color: var(--bg-town);">
+        <td><strong>Colombo</strong></td>
+        <td>04.05.2025 – 06.05.2025</td>
         <td>Stadtbesichtigung, Souvenirs, Abflugvorbereitungen</td>
-        <td>2 Nächte</td>
+        <td>2</td>
+        <td>2.08</td>
         <td>City Center Guesthouse, Colombo Boutique Hotel</td>
       </tr>
-    </table>
-  </div>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  // Checkbox-Handler zum Ein- und Ausblenden der Route-Zeilen
+  document.getElementById('toggleRoutes').addEventListener('change', function() {
+    var routeRows = document.querySelectorAll('.routeRow');
+    routeRows.forEach(function(row) {
+      row.style.display = this.checked ? '' : 'none';
+    }.bind(this));
+  });
+  // Standardmäßig ausblenden
+  document.querySelectorAll('.routeRow').forEach(function(row) {
+    row.style.display = 'none';
+  });
+</script>
+
 
   <!-- Geschätzte Kosten -->
   <div class="module">

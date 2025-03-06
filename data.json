@@ -27,12 +27,8 @@
       ],
       "accommodations": [
         {
-          "name": "Sigiriya Village Hotel",
-          "link": "https://example.com/sigiriya-village-hotel"
-        },
-        {
-          "name": "Dambulla Rock Arch",
-          "link": "https://example.com/dambulla-rock-arch"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
       ]
     },
@@ -44,14 +40,12 @@
         "Dschungelwanderung"
       ],
       "accommodations": [
+        
         {
-          "name": "Rafters Retreat",
-          "link": "https://example.com/rafters-retreat"
-        },
-        {
-          "name": "Palmstone Retreat",
-          "link": "https://example.com/palmstone-retreat"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
+        
       ]
     },
     "ella": {
@@ -63,12 +57,8 @@
       ],
       "accommodations": [
         {
-          "name": "Ella Rock View Hotel",
-          "link": "https://example.com/ella-rock-view-hotel"
-        },
-        {
-          "name": "The Chill House",
-          "link": "https://example.com/the-chill-house"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
       ]
     },
@@ -80,12 +70,8 @@
       ],
       "accommodations": [
         {
-          "name": "Green View Homestay",
-          "link": "https://example.com/green-view-homestay"
-        },
-        {
-          "name": "Clouds Inn",
-          "link": "https://example.com/clouds-inn"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
       ]
     },
@@ -97,12 +83,8 @@
       ],
       "accommodations": [
         {
-          "name": "Hotel Safari Lodge",
-          "link": "https://example.com/hotel-safari-lodge"
-        },
-        {
-          "name": "Eco Jungle Stay",
-          "link": "https://example.com/eco-jungle-stay"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
       ]
     },
@@ -116,13 +98,9 @@
       ],
       "accommodations": [
         {
-          "name": "Salt House",
-          "link": "https://example.com/salt-house"
-        },
-        {
-          "name": "Dots Bay House",
-          "link": "https://example.com/dots-bay-house"
-        }
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
+        } }
       ]
     },
     "colombo": {
@@ -134,12 +112,8 @@
       ],
       "accommodations": [
         {
-          "name": "Marino Beach Hotel",
-          "link": "https://example.com/marino-beach-hotel"
-        },
-        {
-          "name": "CityRest Fort",
-          "link": "https://example.com/cityrest-fort"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
       ]
     }

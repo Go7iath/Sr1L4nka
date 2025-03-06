@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <style>
-    /* Existing styles remain unchanged */
+    /* Existing styles */
     #map { height: 600px; width: 100%; }
     body {
       font-family: Arial, sans-serif;
@@ -41,17 +41,14 @@
       background: #f4f4f4;
     }
     @media screen and (max-width: 600px) {
-      table th:nth-child(3), table td:nth-child(3){
-
-      display: none;
+      table th:nth-child(3), table td:nth-child(3) {
+        display: none;
       }
-
     }
     @media screen and (max-width: 800px) {
       table th:nth-child(5), table td:nth-child(5) {
         display: none;
       }
-
     }
     ul {
       margin: 10px 0;
@@ -75,75 +72,73 @@
       height: 100%;
       border: none;
     }
-
-    /* NEW: Container for modules to make them responsive */
+    /* NEW: Container for modules to center them */
     .modules-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-    }
-    /* Each module will flexibly take up available space, minimum 300px */
-    .modules-container .module {
-      flex: 1 1 300px;
-      box-sizing: border-box;
+      justify-content: center;  /* centers modules horizontally */
+      margin: 0 auto;           /* centers container in page */
+      max-width: 1200px;        /* optional: limit container's width */
     }
   </style>
 </head>
 <body>
 
-  
-<!-- Flight Info Module (stays full-width by itself) -->
-<div class="module" style="flex: 1 1 100%;">
-  <h1>Sri Lanka Backpacking Reiseplan</h1>
-  <p>
-    <strong>Reisedaten:</strong> 03.04.2025 – 06.05.2025<br>
-    <strong>Abflughafen:</strong> Frankfurt am Main (FRA)<br>
-    <strong>Zielflughafen:</strong> Bandaranaike International Airport (CMB), Colombo
-  </p>
-  
-  <!-- Collapsible Flight Information -->
-  <div id="flightInfo" style="display: none;">
-    <h2>Flugdaten & Preis (für 2 Personen)</h2>
-    <ul>
-      <li><strong>Hinflug (Do, 03.04.2025):</strong><br>
-        FRA (Frankfurt) 11:10 → MAA (Chennai) 9h 45m Zwischenstopp → Ankunft CMB (Colombo) 11:20 (+1 Tag)<br>
-        Gesamtdauer: 20h 40m<br>
-        Fluggesellschaften: Lufthansa, SriLankan Airlines
-      </li>
-      <li><strong>Rückflug (Di, 06.05.2025):</strong><br>
-        CMB (Colombo) 17:15 → BOM (Mumbai) 6h 50m Zwischenstopp → Ankunft FRA (Frankfurt) 08:05 (+1 Tag)<br>
-        Gesamtdauer: 18h 20m<br>
-        Fluggesellschaften: SriLankan Airlines, Lufthansa
-      </li>
-      <li><strong>Gesamtpreis:</strong> 1.495,62 € (Economy Basic, 2 Personen)</li>
-      <li>
-        <strong>Buchungslink:</strong>
-        <a href="https://shop.lufthansa.com/booking/cart?cartId=1H6BQUZUTGNUFOUI&type=cart&origin=FRA&utm_source=sharedcart&utm_medium=referral&consent=true" target="_blank">
-          Lufthansa Shared Cart
-        </a>
-      </li>
-    </ul>
+  <!-- Flight Info Module (full-width) -->
+  <div class="module" style="flex: 1 1 100%;">
+    <h1>Sri Lanka Backpacking Reiseplan</h1>
+    <p>
+      <strong>Reisedaten:</strong> 03.04.2025 – 06.05.2025<br>
+      <strong>Abflughafen:</strong> Frankfurt am Main (FRA)<br>
+      <strong>Zielflughafen:</strong> Bandaranaike International Airport (CMB), Colombo
+    </p>
+    
+    <!-- Collapsible Flight Information -->
+    <div id="flightInfo" style="display: none;">
+      <h2>Flugdaten & Preis (für 2 Personen)</h2>
+      <ul>
+        <li><strong>Hinflug (Do, 03.04.2025):</strong><br>
+          FRA (Frankfurt) 11:10 → MAA (Chennai) 9h 45m Zwischenstopp → Ankunft CMB (Colombo) 11:20 (+1 Tag)<br>
+          Gesamtdauer: 20h 40m<br>
+          Fluggesellschaften: Lufthansa, SriLankan Airlines
+        </li>
+        <li><strong>Rückflug (Di, 06.05.2025):</strong><br>
+          CMB (Colombo) 17:15 → BOM (Mumbai) 6h 50m Zwischenstopp → Ankunft FRA (Frankfurt) 08:05 (+1 Tag)<br>
+          Gesamtdauer: 18h 20m<br>
+          Fluggesellschaften: SriLankan Airlines, Lufthansa
+        </li>
+        <li><strong>Gesamtpreis:</strong> 1.495,62 € (Economy Basic, 2 Personen)</li>
+        <li>
+          <strong>Buchungslink:</strong>
+          <a href="https://shop.lufthansa.com/booking/cart?cartId=1H6BQUZUTGNUFOUI&type=cart&origin=FRA&utm_source=sharedcart&utm_medium=referral&consent=true" target="_blank">
+            Lufthansa Shared Cart
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Button to Toggle the Flight Info -->
+    <button onclick="toggleFlightInfo()">Mehr</button>
   </div>
 
-  <!-- Button to Toggle the Flight Info -->
-  <button onclick="toggleFlightInfo()">Mehr</button>
-</div>
-
-<script>
-  function toggleFlightInfo() {
-    var flightInfo = document.getElementById("flightInfo");
-    var button = document.querySelector("button");
-
-    if (flightInfo.style.display === "none") {
-      flightInfo.style.display = "block";
-      button.innerText = "Weniger";
-    } else {
-      flightInfo.style.display = "none";
-      button.innerText = "Mehr";
+  <script>
+    function toggleFlightInfo() {
+      var flightInfo = document.getElementById("flightInfo");
+      var button = document.querySelector("button");
+  
+      if (flightInfo.style.display === "none") {
+        flightInfo.style.display = "block";
+        button.innerText = "Weniger";
+      } else {
+        flightInfo.style.display = "none";
+        button.innerText = "Mehr";
+      }
     }
-  }
-</script>
+  </script>
 
+  <!-- Modules Container -->
+  <div class="modules-container">
     <!-- Reiseroute Module -->
     <div class="module">
       <h2>Reiseroute, Datum, tatsächliche Aufenthaltsdauer & Unterkunftsvorschläge</h2>
@@ -158,7 +153,6 @@
             <th>Hauptaktivitäten</th>
             <th>Aufenthaltsdauer (Nächte)</th>
             <th>Tatsächliche Aufenthaltsdauer (Tage)</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -169,7 +163,6 @@
             <td>Windsurfen, Kitesurfen, Delfinbeobachtung</td>
             <td>8</td>
             <td>7.5</td>
-            
           </tr>
           <!-- Route: Kalpitiya -> Sigiriya/Dambulla -->
           <tr class="routeRow">
@@ -272,21 +265,7 @@
         </tbody>
       </table>
     </div>
-    <script>
-      // Checkbox-Handler zum Ein- und Ausblenden der Route-Zeilen
-      document.getElementById('toggleRoutes').addEventListener('change', function() {
-        var routeRows = document.querySelectorAll('.routeRow');
-        routeRows.forEach(function(row) {
-          row.style.display = this.checked ? '' : 'none';
-        }.bind(this));
-      });
-      // Standardmäßig ausblenden
-      document.querySelectorAll('.routeRow').forEach(function(row) {
-        row.style.display = 'none';
-      });
-    </script>
-    
-    <div class="modules-container">
+
     <!-- Geschätzte Kosten Module -->
     <div class="module">
       <h2>Geschätzte Kosten (p. P.)</h2>
@@ -401,7 +380,7 @@
           // Add markers and location names on the map
           locations.forEach(loc => {
               L.marker(loc.coords).addTo(map)
-                  .bindPopup(<b>${loc.name}</b>)
+                  .bindPopup(`<b>${loc.name}</b>`)
                   .openPopup();
   
               L.tooltip({
@@ -416,7 +395,7 @@
       </script>
     </div>
   </div>
-  <!-- Modules container end -->
+  <!-- End modules-container -->
 
 </body>
 </html>

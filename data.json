@@ -1,0 +1,20 @@
+{
+    "locations": {
+      "udawalawe": {
+        "title": "Udawalawe Nationalpark",
+        "activities": ["Safari", "Tierbeobachtungen"],
+        "accommodations": ["Hotel Safari Lodge", "Eco Jungle Stay"]
+      },
+      "ella": {
+        "title": "Ella",
+        "activities": ["Wanderungen", "Teeplantagen besuchen", "Nine Arches Bridge"],
+        "accommodations": ["Ella Rock View Hotel", "The Chill House"]
+      },
+      "haputale": {
+        "title": "Haputale",
+        "activities": ["Lipton’s Seat", "Dambatenne Teeplantage", "Wanderungen"],
+        "accommodations": ["Green View Homestay", "Clouds Inn"]
+      }
+    }
+  }
+  

@@ -8,14 +8,14 @@
         "Delfinbeobachtung"
       ],
       "accommodations": [
+
+        
         {
-          "name": "Kite Surfing Lanka",
-          "link": "https://example.com/kite-surfing-lanka"
-        },
-        {
-          "name": "Palagama Beach Resort",
-          "link": "https://example.com/palagama-beach-resort"
+          "name": "AirBnB",
+          "link": "https://www.airbnb.de/"
         }
+
+        
       ]
     },
     "sigiriya": {

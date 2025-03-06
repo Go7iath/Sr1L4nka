@@ -27,12 +27,17 @@ async function loadData() {
       activitiesList.appendChild(li);
     });
 
-    // Render Accommodations
+    // Render Accommodations with Links
     const accommodationsList = document.getElementById("accommodations-list");
     accommodationsList.innerHTML = "";
     locationData.accommodations.forEach(accommodation => {
       const li = document.createElement("li");
-      li.textContent = accommodation;
+      const link = document.createElement("a");
+      link.textContent = accommodation.name;
+      link.href = accommodation.link;
+      link.target = "_blank"; // Open in new tab
+      link.rel = "noopener noreferrer"; // Security best practice
+      li.appendChild(link);
       accommodationsList.appendChild(li);
     });
 

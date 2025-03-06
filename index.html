@@ -81,9 +81,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;  /* centers modules horizontally */
-      margin: 0 auto;           /* centers container in page */
-      max-width: 1200px; 
     }
     /* Each module will flexibly take up available space, minimum 300px */
     .modules-container .module {
@@ -404,7 +401,7 @@
           // Add markers and location names on the map
           locations.forEach(loc => {
               L.marker(loc.coords).addTo(map)
-                  .bindPopup(`<b>${loc.name}</b>`)
+                  .bindPopup(<b>${loc.name}</b>)
                   .openPopup();
   
               L.tooltip({

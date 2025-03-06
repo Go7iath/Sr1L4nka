@@ -5,8 +5,6 @@ async function loadData() {
 
     // Get the page filename without extension (e.g., "udawalawe" from "udawalawe.html")
     const locationKey = window.location.pathname.split("/").pop().replace(".html", "");
-
-    // Find data for this location
     const locationData = jsonData.locations[locationKey];
 
     if (!locationData) {
@@ -31,24 +29,27 @@ async function loadData() {
     const accommodationsList = document.getElementById("accommodations-list");
     accommodationsList.innerHTML = "";
     locationData.accommodations.forEach(accommodation => {
-      if (typeof accommodation === "object" && accommodation.name && accommodation.link) {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-        link.textContent = accommodation.name;
-        link.href = accommodation.link;
-        link.target = "_blank"; // Open in new tab
-        link.rel = "noopener noreferrer"; // Security best practice
-        li.appendChild(link);
-        accommodationsList.appendChild(li);
-      } else {
+      // Debug: log the accommodation object
+      console.log("Accommodation:", accommodation);
+      
+      // Check if the properties are of type string
+      if (typeof accommodation.name !== "string" || typeof accommodation.link !== "string") {
         console.error("Invalid accommodation format:", accommodation);
+        return;
       }
+      
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.textContent = accommodation.name;
+      a.href = accommodation.link;
+      a.target = "_blank"; // Open in a new tab
+      a.rel = "noopener noreferrer";
+      li.appendChild(a);
+      accommodationsList.appendChild(li);
     });
-
   } catch (error) {
     console.error("Fehler beim Laden der Daten:", error);
   }
 }
 
-// Load data when the page loads
 document.addEventListener("DOMContentLoaded", loadData);

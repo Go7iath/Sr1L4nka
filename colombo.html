@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Colombo – Aktivitäten & To‑Do</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 20px;
+    }
+    h1 { text-align: center; color: #333; }
+    h4 { text-align: center; color: #b0b0b0; }
+
+    .header-container {
+    display: flex;
+    justify-content: center; /* Zentriert beide Elemente horizontal */
+    align-items:baseline;   /* Richtet beide am unteren Rand aus */
+    gap: 1em;                /* Etwa ein Fingerbreit Abstand zwischen den Elementen */
+    margin: 0 auto;          /* Falls du den Container zusätzlich horizontal zentrieren möchtest */
+    }
+
+
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .module {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+    h2, h3 { margin-top: 0; color: #2c3e50; }
+    ul { list-style: disc; margin: 10px; padding-left: 20px; }
+    a { color: #2980b9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Colombo</h1>
+        <h4><a href="index.html">zurück</a></h4>
+      </div>
+  <div class="grid-container">
+    <div class="module">
+      <h2>Aktivitäten</h2>
+      <ul>
+        <li><a href="#" target="_blank">Stadtbesichtigung</a></li>
+        <li><a href="#" target="_blank">Shopping & Souvenirs</a></li>
+      </ul>
+    </div>
+    <div class="module">
+      <h2>To Do List</h2>
+      <ul>
+        <!-- Hier später Einträge -->
+      </ul>
+    </div>
+    <div class="module">
+      <h2>Unterkunftsvorschläge</h2>
+      <ul>
+        <!-- Hier später Unterkunftsideen -->
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

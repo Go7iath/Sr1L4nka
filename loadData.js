@@ -30,16 +30,21 @@ async function loadData() {
     // Render Accommodations with Links
     const accommodationsList = document.getElementById("accommodations-list");
     accommodationsList.innerHTML = "";
-    locationData.accommodations.forEach(accommodation => {
-      const li = document.createElement("li");
-      const link = document.createElement("a");
-      link.textContent = accommodation.name;
-      link.href = accommodation.link;
-      link.target = "_blank"; // Open in new tab
-      link.rel = "noopener noreferrer"; // Security best practice
-      li.appendChild(link);
-      accommodationsList.appendChild(li);
-    });
+
+    if (Array.isArray(locationData.accommodations)) {
+      locationData.accommodations.forEach(accommodation => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.textContent = accommodation.name;
+        link.href = accommodation.link;
+        link.target = "_blank"; // Open in new tab
+        link.rel = "noopener noreferrer"; // Security best practice
+        li.appendChild(link);
+        accommodationsList.appendChild(li);
+      });
+    } else {
+      accommodationsList.innerHTML = "<li>Keine Unterkünfte verfügbar</li>";
+    }
 
   } catch (error) {
     console.error("Fehler beim Laden der Daten:", error);

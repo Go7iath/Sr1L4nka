@@ -266,6 +266,23 @@
       </table>
     </div>
 
+        <script>
+      // Checkbox-Handler zum Ein- und Ausblenden der Route-Zeilen
+      document.getElementById('toggleRoutes').addEventListener('change', function() {
+        var routeRows = document.querySelectorAll('.routeRow');
+        routeRows.forEach(function(row) {
+          row.style.display = this.checked ? '' : 'none';
+        }.bind(this));
+      });
+      // Standardmäßig ausblenden
+      document.querySelectorAll('.routeRow').forEach(function(row) {
+        row.style.display = 'none';
+      });
+    </script>
+
+
+    
+
     <!-- Geschätzte Kosten Module -->
     <div class="module">
       <h2>Geschätzte Kosten (p. P.)</h2>

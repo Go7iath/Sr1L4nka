@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packliste für Sri Lanka</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .module {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #2980b9;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    li input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    
+    .header-container {
+    display: flex;
+    justify-content: center; /* Zentriert beide Elemente horizontal */
+    align-items:baseline;   /* Richtet beide am unteren Rand aus */
+    gap: 1em;                /* Etwa ein Fingerbreit Abstand zwischen den Elementen */
+    margin: 0 auto;          /* Falls du den Container zusätzlich horizontal zentrieren möchtest */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="module">
+ 
+    <div class="header-container">
+      <h1>Packliste für Sri Lanka</h1>
+      <h4><a href="index.html">zurück</a></h4>
+    </div>
+    <h2>Reisevorbereitung</h2>
+    <ul>
+      <li><input type="checkbox" id="passport"> <label for="passport">Reisepass</label></li>
+      <li><input type="checkbox" id="visa"> <label for="visa">Visum (Sri Lanka)</label></li>
+      <li><input type="checkbox" id="flights"> <label for="flights">Flugtickets</label></li>
+      <li><input type="checkbox" id="insurance"> <label for="insurance">Reiseversicherung</label></li>
+      <li><input type="checkbox" id="money"> <label for="money">Bargeld (USD & LKR)</label></li>
+      <li><input type="checkbox" id="cards"> <label for="cards">Kreditkarte(n)</label></li>
+    </ul>
+
+    <h2>Kleidung</h2>
+    <ul>
+      <li><input type="checkbox" id="tshirts"> <label for="tshirts">T-Shirts (leichte Baumwolle)</label></li>
+      <li><input type="checkbox" id="shorts"> <label for="shorts">Shorts</label></li>
+      <li><input type="checkbox" id="swimwear"> <label for="swimwear">Badebekleidung</label></li>
+      <li><input type="checkbox" id="shoes"> <label for="shoes">Bequeme Schuhe</label></li>
+      <li><input type="checkbox" id="hat"> <label for="hat">Hut oder Kappe</label></li>
+    </ul>
+
+    <h2>Elektronik</h2>
+    <ul>
+      <li><input type="checkbox" id="phone"> <label for="phone">Smartphone & Ladegerät</label></li>
+      <li><input type="checkbox" id="powerbank"> <label for="powerbank">Powerbank</label></li>
+      <li><input type="checkbox" id="camera"> <label for="camera">Kamera oder GoPro</label></li>
+      <li><input type="checkbox" id="adapter"> <label for="adapter">Reiseadapter</label></li>
+    </ul>
+
+    <h2>Sonstiges</h2>
+    <ul>
+      <li><input type="checkbox" id="toiletries"> <label for="toiletries">Toilettenartikel (Zahnbürste, Seife, etc.)</label></li>
+      <li><input type="checkbox" id="sunscreen"> <label for="sunscreen">Sonnenschutz</label></li>
+      <li><input type="checkbox" id="medication"> <label for="medication">Medikamente (falls nötig)</label></li>
+      <li><input type="checkbox" id="snacks"> <label for="snacks">Snacks für unterwegs</label></li>
+    </ul>
+  </div>
+
+</body>
+</html>

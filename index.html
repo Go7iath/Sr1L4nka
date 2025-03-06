@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lanka Backpacking Reiseplan (03.04.2025 – 06.05.2025)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    /* Existing styles remain unchanged */
+    #map { height: 600px; width: 100%; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #fafafa;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .module {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #fff;
+      --bg-town: #AED1E5;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #f4f4f4;
+    }
+    ul {
+      margin: 10px 0;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      margin-top: 20px;
+      border: 1px solid #ddd;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* NEW: Container for modules to make them responsive */
+    .modules-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    /* Each module will flexibly take up available space, minimum 300px */
+    .modules-container .module {
+      flex: 1 1 300px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  
+<!-- Flight Info Module (stays full-width by itself) -->
+<div class="module" style="flex: 1 1 100%;">
+  <h1>Sri Lanka Backpacking Reiseplan</h1>
+  <p>
+    <strong>Reisedaten:</strong> 03.04.2025 – 06.05.2025<br>
+    <strong>Abflughafen:</strong> Frankfurt am Main (FRA)<br>
+    <strong>Zielflughafen:</strong> Bandaranaike International Airport (CMB), Colombo
+  </p>
+  
+  <!-- Collapsible Flight Information -->
+  <div id="flightInfo" style="display: none;">
+    <h2>Flugdaten & Preis (für 2 Personen)</h2>
+    <ul>
+      <li><strong>Hinflug (Do, 03.04.2025):</strong><br>
+        FRA (Frankfurt) 11:10 → MAA (Chennai) 9h 45m Zwischenstopp → Ankunft CMB (Colombo) 11:20 (+1 Tag)<br>
+        Gesamtdauer: 20h 40m<br>
+        Fluggesellschaften: Lufthansa, SriLankan Airlines
+      </li>
+      <li><strong>Rückflug (Di, 06.05.2025):</strong><br>
+        CMB (Colombo) 17:15 → BOM (Mumbai) 6h 50m Zwischenstopp → Ankunft FRA (Frankfurt) 08:05 (+1 Tag)<br>
+        Gesamtdauer: 18h 20m<br>
+        Fluggesellschaften: SriLankan Airlines, Lufthansa
+      </li>
+      <li><strong>Gesamtpreis:</strong> 1.495,62 € (Economy Basic, 2 Personen)</li>
+      <li>
+        <strong>Buchungslink:</strong>
+        <a href="https://shop.lufthansa.com/booking/cart?cartId=1H6BQUZUTGNUFOUI&type=cart&origin=FRA&utm_source=sharedcart&utm_medium=referral&consent=true" target="_blank">
+          Lufthansa Shared Cart
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Button to Toggle the Flight Info -->
+  <button onclick="toggleFlightInfo()">Mehr</button>
+</div>
+
+<script>
+  function toggleFlightInfo() {
+    var flightInfo = document.getElementById("flightInfo");
+    var button = document.querySelector("button");
+
+    if (flightInfo.style.display === "none") {
+      flightInfo.style.display = "block";
+      button.innerText = "Weniger";
+    } else {
+      flightInfo.style.display = "none";
+      button.innerText = "Mehr";
+    }
+  }
+</script>
+
+    <!-- Reiseroute Module -->
+    <div class="module">
+      <h2>Reiseroute, Datum, tatsächliche Aufenthaltsdauer & Unterkunftsvorschläge</h2>
+      <label>
+        <input type="checkbox" id="toggleRoutes"> Reisewege anzeigen
+      </label>
+      <table>
+        <thead>
+          <tr>
+            <th>Ort</th>
+            <th>Datum</th>
+            <th>Hauptaktivitäten</th>
+            <th>Aufenthaltsdauer (Nächte)</th>
+            <th>Tatsächliche Aufenthaltsdauer (Tage)</th>
+            <th>Unterkunftsvorschläge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Location 1: Kalpitiya -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Kalpitiya</strong></td>
+            <td>04.04.2025 – 12.04.2025</td>
+            <td>Windsurfen, Kitesurfen, Delfinbeobachtung</td>
+            <td>8</td>
+            <td>7.5</td>
+            <td>Eco-Lodge Kalpitiya, Beachside Guesthouse</td>
+          </tr>
+          <!-- Route: Kalpitiya -> Sigiriya/Dambulla -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Kalpitiya nach Sigiriya/Dambulla: Abfahrt 12.04, 12:00 – Ankunft 12.04, 18:00, Dauer 6h, Reisekosten ca. 5 €
+            </td>
+          </tr>
+          <!-- Location 2: Sigiriya/Dambulla -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Sigiriya/Dambulla</strong></td>
+            <td>12.04.2025 – 14.04.2025</td>
+            <td>Felsenfestung Sigiriya, Höhlentempel, Safari</td>
+            <td>2</td>
+            <td>1.8</td>
+            <td>Heritage Guesthouse Sigiriya, Dambulla Villa</td>
+          </tr>
+          <!-- Route: Sigiriya/Dambulla -> Kitulgala -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Sigiriya/Dambulla nach Kitulgala: Abfahrt 14.04, 14:00 – Ankunft 14.04, 17:00, Dauer 3h, Reisekosten ca. 5 €
+            </td>
+          </tr>
+          <!-- Location 3: Kitulgala -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Kitulgala</strong></td>
+            <td>14.04.2025 – 17.04.2025</td>
+            <td>Wildwasser-Rafting, Canyoning, Dschungelwanderung</td>
+            <td>3</td>
+            <td>3.0</td>
+            <td>Palmstone Retreat, Kitulgala Heritage Resort</td>
+          </tr>
+          <!-- Route: Kitulgala -> Ella -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Kitulgala nach Ella: Abfahrt 17.04, 17:30 – Ankunft 17.04, 23:30, Dauer 6h, Reisekosten ca. 10 €
+            </td>
+          </tr>
+          <!-- Location 4: Ella -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Ella</strong></td>
+            <td>17.04.2025 – 20.04.2025</td>
+            <td>Wanderungen, Teeplantagen, Wasserfälle</td>
+            <td>3</td>
+            <td>2.63</td>
+            <td>Tea Garden Cottage, Ella Mountain Retreat</td>
+          </tr>
+          <!-- Route: Ella -> Haputale -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Ella nach Haputale: Abfahrt 20.04, 10:00 – Ankunft 20.04, 11:00, Dauer 1h, Reisekosten ca. 5 €
+            </td>
+          </tr>
+          <!-- Location 5: Haputale -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Haputale</strong></td>
+            <td>20.04.2025 – 21.04.2025</td>
+            <td>Authentisches Bergdorf, Aussichten & Natur</td>
+            <td>1</td>
+            <td>1.04</td>
+            <td>Lokale Guesthouses in Haputale</td>
+          </tr>
+          <!-- Route: Haputale -> Udawalawe -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Haputale zum Udawalawe Nationalpark: Abfahrt 21.04, 12:00 – Ankunft 21.04, 16:00, Dauer 4h, Reisekosten ca. 10 €
+            </td>
+          </tr>
+          <!-- Location 6: Udawalawe Nationalpark -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Udawalawe Nationalpark</strong></td>
+            <td>21.04.2025 – 24.04.2025</td>
+            <td>Safari, Tierbeobachtungen</td>
+            <td>3</td>
+            <td>2.63</td>
+            <td>Udawalawe Safari Lodge, National Park Guesthouse</td>
+          </tr>
+          <!-- Route: Udawalawe -> Hiriketya -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Udawalawe nach Hiriketya: Abfahrt 24.04, 09:00 – Ankunft 24.04, 12:00, Dauer 3h, Reisekosten ca. 5 €
+            </td>
+          </tr>
+          <!-- Location 7: Hiriketya -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Hiriketya</strong></td>
+            <td>24.04.2025 – 04.05.2025</td>
+            <td>Surfen, Entspannen, Strandleben</td>
+            <td>10</td>
+            <td>9.92</td>
+            <td>Surf & Chill Hiriketya, Beachside Surf Inn</td>
+          </tr>
+          <!-- Route: Hiriketya -> Colombo -->
+          <tr class="routeRow">
+            <td colspan="6" style="padding: 5px 10px; font-style: italic; font-size: 0.9em;">
+              Von Hiriketya nach Colombo: Abfahrt 04.05, 10:00 – Ankunft 04.05, 15:00, Dauer 5h, Reisekosten ca. 10 €
+            </td>
+          </tr>
+          <!-- Location 8: Colombo -->
+          <tr style="background-color: var(--bg-town);">
+            <td><strong>Colombo</strong></td>
+            <td>04.05.2025 – 06.05.2025</td>
+            <td>Stadtbesichtigung, Souvenirs, Abflugvorbereitungen</td>
+            <td>2</td>
+            <td>2.08</td>
+            <td>City Center Guesthouse, Colombo Boutique Hotel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      // Checkbox-Handler zum Ein- und Ausblenden der Route-Zeilen
+      document.getElementById('toggleRoutes').addEventListener('change', function() {
+        var routeRows = document.querySelectorAll('.routeRow');
+        routeRows.forEach(function(row) {
+          row.style.display = this.checked ? '' : 'none';
+        }.bind(this));
+      });
+      // Standardmäßig ausblenden
+      document.querySelectorAll('.routeRow').forEach(function(row) {
+        row.style.display = 'none';
+      });
+    </script>
+    
+    <div class="modules-container">
+    <!-- Geschätzte Kosten Module -->
+    <div class="module">
+      <h2>Geschätzte Kosten (p. P.)</h2>
+      <table>
+        <tr>
+          <th>Kategorie</th>
+          <th>Kosten pro Tag</th>
+          <th>Gesamtkosten</th>
+        </tr>
+        <tr>
+          <td>Unterkunft</td>
+          <td>ca. 15 €</td>
+          <td>15 € x 32 Nächte ≈ 480 €</td>
+        </tr>
+        <tr>
+          <td>Essen</td>
+          <td>ca. 9 €</td>
+          <td>9 € x 33 Tage ≈ 297 €</td>
+        </tr>
+        <tr>
+          <td>Transport</td>
+          <td>ca. 5 €</td>
+          <td>ca. 160 € gesamt</td>
+        </tr>
+        <tr>
+          <td>Aktivitäten</td>
+          <td>ca. 7 €</td>
+          <td>ca. 220 € gesamt</td>
+        </tr>
+        <tr>
+          <td><strong>Zwischensumme</strong></td>
+          <td></td>
+          <td><strong>ca. 1.157 €</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Flug (Hin- & Rückflug, 2 Personen)</strong></td>
+          <td></td>
+          <td><strong>1.495,62 € (gesamt)</strong></td>
+        </tr>
+        <tr>
+          <td colspan="2"><strong>Gesamtbudget p. P. (inkl. Flug anteilig)</strong></td>
+          <td><strong>ca. 1.157 € + 747,81 € ≈ 1.905 €</strong></td>
+        </tr>
+      </table>
+      <p><em>Hinweis: Dies sind grobe Schätzungen. Individuelle Ausgaben können abweichen.</em></p>
+    </div>
+
+    <!-- Transport Module -->
+    <div class="module">
+      <h2>Transport zwischen den Orten</h2>
+      <ul>
+        <li><strong>Colombo → Kalpitiya:</strong> Direkt per Bus (~4h, ca. 3–5 €) oder Taxi (ca. 40 €).</li>
+        <li><strong>Kalpitiya → Sigiriya/Dambulla:</strong> Bus (über Kurunegala, ca. 6h, ca. 5–7 €).</li>
+        <li><strong>Sigiriya/Dambulla → Ella:</strong> Bus nach Kandy (ca. 3h) und dann spektakuläre Zugfahrt nach Ella (ca. 6h, ca. 3–5 €).</li>
+        <li><strong>Ella → Mawella Beach:</strong> Bus oder Tuk-Tuk (ca. 4h, ca. 4–6 € bzw. ca. 30–40 € für ein Taxi).</li>
+        <li><strong>Mawella Beach → Colombo:</strong> Zug oder Bus (ca. 5h, ca. 5–7 €).</li>
+      </ul>
+    </div>
+
+    <!-- Additional Tips Module -->
+    <div class="module">
+      <h2>Zusätzliche Tipps</h2>
+      <ul>
+        <li>Bei Tempelbesuchen: Bitte Schultern und Knie bedecken.</li>
+        <li>Lokale SIM-Karte (ca. 5 € für 20GB) sichert dir mobiles Internet.</li>
+        <li>Nutze öffentliche Verkehrsmittel, um Kosten zu sparen.</li>
+        <li>Packe ausreichend Sonnen- und Mückenschutz ein.</li>
+        <li>Inlandsflüge sind selten nötig, da Busse und Züge günstig sind.</li>
+      </ul>
+      <h2><a href="packen.html">➔ Packliste</a></h2>
+    </div>
+
+    <!-- Map Module -->
+    <div class="module" style="flex: 1 1 100%;">
+      <div id="map"></div>
+      <script>
+          // Initialize the map centered on Sri Lanka
+          var map = L.map('map').setView([7.8731, 80.7718], 8);
+  
+          // Add OpenStreetMap tiles
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(map);
+  
+          // Define locations and their coordinates
+          var locations = [
+              { name: "Colombo", coords: [6.9271, 79.8612] },
+              { name: "Kalpitiya", coords: [8.2432, 79.8455] },
+              { name: "Sigiriya", coords: [7.9509, 80.7570] },
+              { name: "Kitulgala", coords: [6.9904, 80.3992] },
+              { name: "Ella", coords: [6.8667, 81.0467] },
+              { name: "Haputale", coords: [6.7667, 81.1000] },
+              { name: "Udawalawe", coords: [6.4739, 80.8888] },
+              { name: "Hiriketya", coords: [5.9667, 80.7167] },
+              { name: "Colombo", coords: [6.9271, 79.8612] }
+          ];
+  
+          // Extract coordinates for the polyline
+          var route = locations.map(loc => loc.coords);
+  
+          // Add the red polyline route to the map
+          var polyline = L.polyline(route, {
+              color: 'red',
+              weight: 4,
+              opacity: 0.8,
+              smoothFactor: 1
+          }).addTo(map);
+  
+          // Fit the map to show the entire route
+          map.fitBounds(polyline.getBounds());
+  
+          // Add markers and location names on the map
+          locations.forEach(loc => {
+              L.marker(loc.coords).addTo(map)
+                  .bindPopup(`<b>${loc.name}</b>`)
+                  .openPopup();
+  
+              L.tooltip({
+                  permanent: true,
+                  direction: "right",
+                  className: "location-label"
+              })
+              .setLatLng(loc.coords)
+              .setContent(loc.name)
+              .addTo(map);
+          });
+      </script>
+    </div>
+  </div>
+  <!-- Modules container end -->
+
+</body>
+</html>

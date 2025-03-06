@@ -7,22 +7,6 @@
         { "name": "Hotel Safari Lodge", "link": "https://example.com/safari-lodge" },
         { "name": "Eco Jungle Stay", "link": "https://example.com/eco-jungle" }
       ]
-    },
-    "ella": {
-      "title": "Ella",
-      "activities": ["Wanderungen", "Teeplantagen besuchen", "Nine Arches Bridge"],
-      "accommodations": [
-        { "name": "Ella Rock View Hotel", "link": "https://example.com/ella-rock-view" },
-        { "name": "The Chill House", "link": "https://example.com/chill-house" }
-      ]
-    },
-    "haputale": {
-      "title": "Haputale",
-      "activities": ["Lipton’s Seat", "Dambatenne Teeplantage", "Wanderungen"],
-      "accommodations": [
-        { "name": "Green View Homestay", "link": "https://example.com/green-view" },
-        { "name": "Clouds Inn", "link": "https://example.com/clouds-inn" }
-      ]
     }
   }
 }

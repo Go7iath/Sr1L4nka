@@ -18,11 +18,6 @@
         }
       ]
     },
-
-
-
-
-    
     "sigiriya_dambulla": {
       "title": "Sigiriya / Dambulla",
       "activities": [
@@ -41,18 +36,12 @@
         }
       ]
     },
-
-
-
-
-    
     "kitulgala": {
       "title": "Kitulgala",
       "activities": [
         "Wildwasser-Rafting",
         "Canyoning",
-        "Höhlen erkunden",
-        "Regenwaldtrekking"
+        "Dschungelwanderung"
       ],
       "accommodations": [
         {
@@ -65,17 +54,12 @@
         }
       ]
     },
-
-
-
-
-    
     "ella": {
       "title": "Ella",
       "activities": [
         "Wanderungen",
         "Teeplantagen besuchen",
-        "Nine Arches Bridge"
+        "Wasserfälle"
       ],
       "accommodations": [
         {
@@ -88,16 +72,11 @@
         }
       ]
     },
-
-
-
-    
     "haputale": {
       "title": "Haputale",
       "activities": [
-        "Lipton’s Seat",
-        "Dambatenne Teeplantage",
-        "Wanderungen"
+        "Authentisches Bergdorf",
+        "Aussichten & Natur"
       ],
       "accommodations": [
         {
@@ -110,9 +89,6 @@
         }
       ]
     },
-
-
-    
     "udawalawe": {
       "title": "Udawalawe Nationalpark",
       "activities": [
@@ -130,15 +106,13 @@
         }
       ]
     },
-
-
-    
     "hiriketya": {
       "title": "Hiriketya",
       "activities": [
         "Surfen",
         "Schwimmen",
-        "Entspannen"
+        "Entspannen",
+        "Strandleben"
       ],
       "accommodations": [
         {
@@ -151,10 +125,6 @@
         }
       ]
     },
-
-
-
-    
     "colombo": {
       "title": "Colombo",
       "activities": [

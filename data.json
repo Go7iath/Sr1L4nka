@@ -8,13 +8,9 @@
         "Delfinbeobachtung"
       ],
       "accommodations": [
-
-        
         {
           "name": "AirBnB",
           "link": "https://www.airbnb.de/"
-        }
-
         }
       ]
     },
@@ -40,12 +36,10 @@
         "Dschungelwanderung"
       ],
       "accommodations": [
-        
         {
           "name": "AirBnB",
           "link": "https://www.airbnb.de/"
         }
-        
       ]
     },
     "ella": {
@@ -100,7 +94,7 @@
         {
           "name": "AirBnB",
           "link": "https://www.airbnb.de/"
-        } }
+        }
       ]
     },
     "colombo": {

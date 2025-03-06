@@ -1,115 +1,19 @@
 {
   "locations": {
-    "kalpitiya": {
-      "title": "Kalpitiya",
-      "activities": ["Windsurfen", "Kitesurfen", "Delfinbeobachtung"],
+    "udawalawe": {
+      "title": "Udawalawe Nationalpark",
+      "activities": ["Safari", "Tierbeobachtungen"],
       "accommodations": [
-        {
-          "name": "Kite Surfing Lanka",
-          "link": "https://www.kitesurfinglanka.com/"
-        },
-        {
-          "name": "Palagama Beach Resort",
-          "link": "https://www.palagamabeach.com/"
-        }
-      ]
-    },
-    "sigiriya_dambulla": {
-      "title": "Sigiriya / Dambulla",
-      "activities": ["Felsenfestung Sigiriya", "Höhlentempel Dambulla", "Safari"],
-      "accommodations": [
-        {
-          "name": "Sigiriya Village Hotel",
-          "link": "https://www.sigiriyavillage.com/"
-        },
-        {
-          "name": "Dambulla Rock Arch",
-          "link": "https://www.dambullarockarch.com/"
-        }
-      ]
-    },
-    "kitulgala": {
-      "title": "Kitulgala",
-      "activities": ["Wildwasser-Rafting", "Canyoning", "Höhlen erkunden", "Regenwaldtrekking"],
-      "accommodations": [
-        {
-          "name": "Rafters Retreat",
-          "link": "https://www.raftersretreat.com/"
-        },
-        {
-          "name": "Palmstone Retreat",
-          "link": "https://www.palmstoneretreat.com/"
-        }
+        { "name": "Hotel Safari Lodge", "link": "https://example.com/safari-lodge" },
+        { "name": "Eco Jungle Stay", "link": "https://example.com/eco-jungle" }
       ]
     },
     "ella": {
       "title": "Ella",
       "activities": ["Wanderungen", "Teeplantagen besuchen", "Nine Arches Bridge"],
       "accommodations": [
-        {
-          "name": "Ella Rock View Hotel",
-          "link": "https://www.ellarockviewhotel.com/"
-        },
-        {
-          "name": "The Chill House",
-          "link": "https://www.chillhouseella.com/"
-        }
-      ]
-    },
-    "haputale": {
-      "title": "Haputale",
-      "activities": ["Lipton’s Seat", "Dambatenne Teeplantage", "Wanderungen"],
-      "accommodations": [
-        {
-          "name": "Green View Homestay",
-          "link": "https://www.greenviewhaputale.com/"
-        },
-        {
-          "name": "Clouds Inn",
-          "link": "https://www.cloudsinnhaputale.com/"
-        }
-      ]
-    },
-    "udawalawe": {
-      "title": "Udawalawe Nationalpark",
-      "activities": ["Safari", "Tierbeobachtungen"],
-      "accommodations": [
-        {
-          "name": "Hotel Safari Lodge",
-          "link": "https://www.hotelsafarilodge.com/"
-        },
-        {
-          "name": "Eco Jungle Stay",
-          "link": "https://www.ecojunglestay.com/"
-        }
-      ]
-    },
-    "hiriketya": {
-      "title": "Hiriketya",
-      "activities": ["Surfen", "Schwimmen", "Entspannen"],
-      "accommodations": [
-        {
-          "name": "Salt House",
-          "link": "https://www.salthouse.lk/"
-        },
-        {
-          "name": "Dots Bay House",
-          "link": "https://www.dotsbayhouse.com/"
-        }
-      ]
-    },
-    "colombo": {
-      "title": "Colombo",
-      "activities": ["Stadtbesichtigung", "Souvenirs einkaufen", "Abflugvorbereitungen"],
-      "accommodations": [
-        {
-          "name": "Marino Beach Hotel",
-          "link": "https://www.marinobeach.com/"
-        },
-        {
-          "name": "CityRest Fort",
-          "link": "https://www.cityrestfort.com/"
-        }
+        { "name": "Ella Rock View Hotel", "link": "https://example.com/ella-rock" },
+        { "name": "The Chill House", "link": "https://example.com/chill-house" }
       ]
     }
   }

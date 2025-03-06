@@ -3,42 +3,114 @@
     "kalpitiya": {
       "title": "Kalpitiya",
       "activities": ["Windsurfen", "Kitesurfen", "Delfinbeobachtung"],
-      "accommodations": ["Kite Surfing Lanka", "Palagama Beach Resort"]
+      "accommodations": [
+        {
+          "name": "Kite Surfing Lanka",
+          "link": "https://www.kitesurfinglanka.com/"
+        },
+        {
+          "name": "Palagama Beach Resort",
+          "link": "https://www.palagamabeach.com/"
+        }
+      ]
     },
     "sigiriya_dambulla": {
       "title": "Sigiriya / Dambulla",
       "activities": ["Felsenfestung Sigiriya", "Höhlentempel Dambulla", "Safari"],
-      "accommodations": ["Sigiriya Village Hotel", "Dambulla Rock Arch"]
+      "accommodations": [
+        {
+          "name": "Sigiriya Village Hotel",
+          "link": "https://www.sigiriyavillage.com/"
+        },
+        {
+          "name": "Dambulla Rock Arch",
+          "link": "https://www.dambullarockarch.com/"
+        }
+      ]
     },
     "kitulgala": {
       "title": "Kitulgala",
       "activities": ["Wildwasser-Rafting", "Canyoning", "Höhlen erkunden", "Regenwaldtrekking"],
-      "accommodations": ["Rafters Retreat", "Palmstone Retreat"]
+      "accommodations": [
+        {
+          "name": "Rafters Retreat",
+          "link": "https://www.raftersretreat.com/"
+        },
+        {
+          "name": "Palmstone Retreat",
+          "link": "https://www.palmstoneretreat.com/"
+        }
+      ]
     },
     "ella": {
       "title": "Ella",
       "activities": ["Wanderungen", "Teeplantagen besuchen", "Nine Arches Bridge"],
-      "accommodations": ["Ella Rock View Hotel", "The Chill House"]
+      "accommodations": [
+        {
+          "name": "Ella Rock View Hotel",
+          "link": "https://www.ellarockviewhotel.com/"
+        },
+        {
+          "name": "The Chill House",
+          "link": "https://www.chillhouseella.com/"
+        }
+      ]
     },
     "haputale": {
       "title": "Haputale",
       "activities": ["Lipton’s Seat", "Dambatenne Teeplantage", "Wanderungen"],
-      "accommodations": ["Green View Homestay", "Clouds Inn"]
+      "accommodations": [
+        {
+          "name": "Green View Homestay",
+          "link": "https://www.greenviewhaputale.com/"
+        },
+        {
+          "name": "Clouds Inn",
+          "link": "https://www.cloudsinnhaputale.com/"
+        }
+      ]
     },
     "udawalawe": {
       "title": "Udawalawe Nationalpark",
       "activities": ["Safari", "Tierbeobachtungen"],
-      "accommodations": ["Hotel Safari Lodge", "Eco Jungle Stay"]
+      "accommodations": [
+        {
+          "name": "Hotel Safari Lodge",
+          "link": "https://www.hotelsafarilodge.com/"
+        },
+        {
+          "name": "Eco Jungle Stay",
+          "link": "https://www.ecojunglestay.com/"
+        }
+      ]
     },
     "hiriketya": {
       "title": "Hiriketya",
       "activities": ["Surfen", "Schwimmen", "Entspannen"],
-      "accommodations": ["Salt House", "Dots Bay House"]
+      "accommodations": [
+        {
+          "name": "Salt House",
+          "link": "https://www.salthouse.lk/"
+        },
+        {
+          "name": "Dots Bay House",
+          "link": "https://www.dotsbayhouse.com/"
+        }
+      ]
     },
     "colombo": {
       "title": "Colombo",
       "activities": ["Stadtbesichtigung", "Souvenirs einkaufen", "Abflugvorbereitungen"],
-      "accommodations": ["Marino Beach Hotel", "CityRest Fort"]
+      "accommodations": [
+        {
+          "name": "Marino Beach Hotel",
+          "link": "https://www.marinobeach.com/"
+        },
+        {
+          "name": "CityRest Fort",
+          "link": "https://www.cityrestfort.com/"
+        }
+      ]
     }
   }
 }

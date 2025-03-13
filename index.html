@@ -86,38 +86,43 @@
 <body>
 
   <!-- Flight Info Module (full-width) -->
-  <div class="module" style="flex: 1 1 100%;">
-    <h1>Sri Lanka Backpacking Reiseplan</h1>
-    <p>
-      <strong>Reisedaten:</strong> 03.04.2025 – 06.05.2025<br>
-      <strong>Abflughafen:</strong> Frankfurt am Main (FRA)<br>
-      <strong>Zielflughafen:</strong> Bandaranaike International Airport (CMB), Colombo
-    </p>
-    
-    <!-- Collapsible Flight Information -->
-    <div id="flightInfo" style="display: none;">
-      <h2>Flugdaten & Preis (für 2 Personen)</h2>
-      <ul>
-        <li><strong>Hinflug (Do, 03.04.2025):</strong><br>
-          FRA (Frankfurt) 11:10 → MAA (Chennai) 9h 45m Zwischenstopp → Ankunft CMB (Colombo) 11:20 (+1 Tag)<br>
-          Gesamtdauer: 20h 40m<br>
-          Fluggesellschaften: Lufthansa, SriLankan Airlines
-        </li>
-        <li><strong>Rückflug (Di, 06.05.2025):</strong><br>
-          CMB (Colombo) 17:15 → BOM (Mumbai) 6h 50m Zwischenstopp → Ankunft FRA (Frankfurt) 08:05 (+1 Tag)<br>
-          Gesamtdauer: 18h 20m<br>
-          Fluggesellschaften: SriLankan Airlines, Lufthansa
-        </li>
-        <li><strong>Gesamtpreis:</strong> 1.495,62 € (Economy Basic, 2 Personen)</li>
-        <li>
-          <strong>Buchungslink:</strong>
-          <a href="https://shop.lufthansa.com/booking/cart?cartId=1F6GMWK0OQDH7MSA&type=cart&origin=FRA&utm_source=sharedcart&utm_medium=referral&consent=true" target="_blank">
-            Lufthansa Shared Cart
-          </a>
-        </li>
-      </ul>
-    </div>
 
+	<div class="module" style="flex: 1 1 100%;">
+  <h1>Sri Lanka Backpacking Reiseplan</h1>
+  <p>
+    <strong>Reisedaten:</strong> 03.04.2025 – 06.05.2025<br>
+    <strong>Abflughafen:</strong> Frankfurt am Main (FRA)<br>
+    <strong>Zielflughafen:</strong> Bandaranaike International Airport (CMB), Colombo
+  </p>
+
+  <!-- Collapsible Flight Information using <details> -->
+  <details id="flightInfo">
+    <summary>Flugdaten &amp; Preis (für 2 Personen)</summary>
+    <ul>
+      <li>
+        <strong>Hinflug (Do, 03.04.2025):</strong><br>
+        FRA (Frankfurt) 11:10 &rarr; MAA (Chennai) 9h 45m Zwischenstopp &rarr; Ankunft CMB (Colombo) 11:20 (+1 Tag)<br>
+        Gesamtdauer: 20h 40m<br>
+        Fluggesellschaften: Lufthansa, SriLankan Airlines
+      </li>
+      <li>
+        <strong>Rückflug (Di, 06.05.2025):</strong><br>
+        CMB (Colombo) 17:15 &rarr; BOM (Mumbai) 6h 50m Zwischenstopp &rarr; Ankunft FRA (Frankfurt) 08:05 (+1 Tag)<br>
+        Gesamtdauer: 18h 20m<br>
+        Fluggesellschaften: SriLankan Airlines, Lufthansa
+      </li>
+      <li>
+        <strong>Gesamtpreis:</strong> 1.495,62 € (Economy Basic, 2 Personen)
+      </li>
+      <li>
+        <strong>Buchungslink:</strong>
+        <a href="https://shop.lufthansa.com/booking/cart?cartId=1F6GMWK0OQDH7MSA&type=cart&origin=FRA&utm_source=sharedcart&utm_medium=referral&consent=true" target="_blank">
+          Lufthansa Shared Cart
+        </a>
+      </li>
+    </ul>
+  </details>
+</div>
     <!-- Button to Toggle the Flight Info -->
     <button onclick="toggleFlightInfo()">Mehr</button>
   </div>
